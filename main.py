@@ -12,8 +12,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import forms
 import smtplib
 import os
-from dotenv import load_dotenv
-load_dotenv()
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY", "dev-secret-key")
@@ -249,4 +248,4 @@ def contact():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5002)
+    app.run(debug=True, port=5005)
