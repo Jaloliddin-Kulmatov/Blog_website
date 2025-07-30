@@ -16,7 +16,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get("DB_URI", "sqlite:///posts.txt")
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY", "dev-secret-key")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI", "sqlite:///posts.db")
 ckeditor = CKEditor(app)
 Bootstrap5(app)
 
